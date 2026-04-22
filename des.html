@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Theory & Documentation | ArtSense</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7c6dfa;
+            --bg: #050508;
+            --card-bg: #0f0f16;
+            --text-main: #e0e0e6;
+            --text-dim: #9b97c4;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
+            color: #fff;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; color: var(--primary); }
+        .subtitle { color: var(--text-dim); margin-bottom: 50px; font-size: 1.2rem; }
+
+        section {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .highlight { color: var(--primary); font-weight: 600; }
+
+        /* Grid for types */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .type-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th { color: var(--primary); font-size: 0.9rem; text-transform: uppercase; }
+
+        .back-nav {
+            margin-bottom: 30px;
+        }
+
+        .back-nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="back-nav">
+       <a href="index.html">← Return to ArtSense App</a>
+    </div>
+
+    <header>
+        <h1>The Digital Image</h1>
+        <p class="subtitle">A technical guide to formation, formats, and the history of visual data.</p>
+    </header>
+
+    <section id="formation">
+        <h2>1. Image Formation & Creation</h2>
+        <p>At its core, a digital image is a numerical representation of a visual scene. In Computer Science, we treat an image as a <span class="highlight">Discrete 2D Function f(x, y)</span>, where x and y are spatial coordinates.</p>
+        
+        <h3>The Process:</h3>
+        <ul>
+            <li><strong>Acquisition:</strong> Light passes through a lens and hits a <strong>CMOS Sensor</strong>.</li>
+            <li><strong>Sampling:</strong> The continuous light is broken into a grid of discrete points called <strong>Pixels</strong> (Picture Elements).</li>
+            <li><strong>Quantization:</strong> The intensity of light in each pixel is converted into a digital value (typically 0 to 255 for 8-bit images).</li>
+        </ul>
+        <p>For color images, we use the <strong>RGB Color Space</strong>, where each pixel consists of three stacked layers (channels): Red, Green, and Blue.</p>
+    </section>
+
+    <section id="types">
+        <h2>2. Digital Image Types</h2>
+        <div class="grid">
+            <div class="type-card">
+                <h3>Raster Images</h3>
+                <p>Made of a fixed grid of pixels. When scaled up, they lose quality (pixelation). Examples: Photos, AI generations.</p>
+            </div>
+            <div class="type-card">
+                <h3>Vector Images</h3>
+                <p>Based on mathematical paths (points, lines, curves). They are infinitely scalable without quality loss. Used for logos.</p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Compression</th>
+                    <th>Best Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>JPEG</strong></td>
+                    <td>Lossy</td>
+                    <td>Complex photographs where small file size is key.</td>
+                </tr>
+                <tr>
+                    <td><strong>PNG</strong></td>
+                    <td>Lossless</td>
+                    <td>Graphics requiring transparency or high contrast edges.</td>
+                </tr>
+                <tr>
+                    <td><strong>WebP</strong></td>
+                    <td>Lossy/Lossless</td>
+                    <td>Modern web standards, superior compression.</td>
+                </tr>
+                <tr>
+                    <td><strong>TIFF</strong></td>
+                    <td>Uncompressed</td>
+                    <td>High-quality printing and medical imaging.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="ai-vs-human">
+        <h2>3. AI vs. Human Painted Art</h2>
+        <p>In the context of binary classification (the core of ArtSense), distinguishing between these two requires looking at "Artifacts."</p>
+        
+        <h3>How AI Paints:</h3>
+        <p>AI models like Stable Diffusion use <strong>Latent Diffusion</strong>. They start with a field of Gaussian noise and slowly refine it based on text prompts. This often leaves "checkerboard" patterns or inconsistencies in lighting that the human eye might miss but a CNN (Convolutional Neural Network) can detect.</p>
+
+        <h3>How Humans Paint:</h3>
+        <p>Humans use <strong>Physical Media</strong> (or digital brushes mimicking them). Human art contains intentional strokes, varying pressure, and a logical understanding of anatomy and physics that current AI models occasionally struggle to simulate perfectly.</p>
+    </section>
+
+    <section id="history">
+        <h2>4. A Brief History of Imagery</h2>
+        <ul>
+            <li><strong>Pre-1800s:</strong> The <em>Camera Obscura</em> allowed artists to project light onto a wall to trace images.</li>
+            <li><strong>1826:</strong> Joseph Niépce created the first permanent photograph using bitumen.</li>
+            <li><strong>1975:</strong> The first digital camera was built at Kodak, weighing 8 pounds and recording only 0.01 megapixels.</li>
+            <li><strong>1990s:</strong> The JPEG standard was finalized, revolutionizing the internet.</li>
+            <li><strong>2020s:</strong> The rise of <strong>Generative AI</strong>, where images are "imagined" rather than "captured."</li>
+        </ul>
+    </section>
+
+    <footer style="text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+        Documentation prepared for the ArtSense Research Project &copy; 2026
+    </footer>
+</div>
+
+</body>
+</html>
