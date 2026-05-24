@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Engineering</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+   <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="nav-logo"><span>AI</span>.Detector</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('about') }}" class="nav-item">History of Image</a></li>
+                <li><a href="{{ url_for('steps') }}" class="nav-item">Steps of Image Processing</a></li>
+                <li><a href="{{ url_for('detection') }}" class="nav-item">How to Detect Image</a></li>
+                <li><a href="{{ url_for('details') }}" class="nav-item">Image Diagnostic</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Detection Methodology</h1>
+            <p class="subtitle">Spotting the difference between artificial generation and human expression</p>
+        </header>
+        <main style="background: var(--card-bg); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05);">
+            <h3>Symmetry and Edge Artifacts</h3>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                AI models generate images through probabilistic sampling, often leading to structural inconsistencies that human eyes overlook but algorithms can quantify:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 1.8;">
+                <li><strong>Frequency Analysis:</strong> AI-generated images often exhibit distinct "checkerboard" artifacts in the frequency domain due to the upsampling layers in Convolutional Neural Networks (CNNs).</li>
+                <li><strong>Geometric Incoherence:</strong> Models struggle with complex human anatomy (such as fingers or joints) and long-range spatial dependencies, resulting in warped perspectives or "impossible" geometry. </li>
+                <li><strong>Typography Errors:</strong> AI lacks a semantic understanding of written language, frequently producing nonsensical text or corrupted character glyphs within an image.</li>
+                <li><strong>Lighting & Shadow Mismatch:</strong> Inconsistencies in light source orientation and shadow casting often betray an AI composite, as the model may assign shadows from multiple conflicting light sources. </li>
+                <li><strong>Micro-texture Anomalies:</strong> AI-generated surfaces often exhibit "blurrier" or overly smooth high-frequency textures compared to the organic, stochastic noise naturally present in real-world photographs.</li>
+            </ul>
+        </main>
+    </div>
+</body>
+</html>

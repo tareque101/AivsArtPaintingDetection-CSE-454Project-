@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Image Metadata</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+   <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="nav-logo"><span>AI</span>.Detector</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('about') }}" class="nav-item">History of Image</a></li>
+                <li><a href="{{ url_for('steps') }}" class="nav-item">Steps of Image Processing</a></li>
+                <li><a href="{{ url_for('detection') }}" class="nav-item">How to Detect Image</a></li>
+                <li><a href="{{ url_for('details') }}" class="nav-item">Image Diagnostic</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Understanding Image Data</h1>
+            <p class="subtitle">The story of images is a journey from cave walls to digital screens. It is fundamentally a history of how humans capture and preserve reality.</p>
+            
+            <ul style="color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                <li><strong>Ancient Beginnings:</strong> Humans first recorded images through cave paintings (around 40,000 years ago) using natural pigments. This evolved into structured art, frescoes, and oil paintings over millennia. </li>
+                <li><strong>The Silhouette Era (1700s):</strong> Before photography, people used mechanical devices like the Camera Obscura (a dark room or box with a small hole) to project real-world scenes onto paper so artists could trace them.</li>
+                <li><strong>The Birth of Photography (1826):</strong> Joseph Nicéphore Niépce created the first permanent photograph, <em>View from the Window at Le Gras</em>, using a pewter plate coated with bitumen. It required an 8-hour exposure time.</li>
+                <li><strong>The Daguerreotype (1839):</strong> Louis Daguerre introduced a commercial process using silver-plated copper sheets, reducing exposure time to minutes and making portrait photography popular. </li>
+                <li><strong>The Film Revolution (1889):</strong> George Eastman invented flexible roll film and launched the Kodak camera, making photography accessible to the public.</li>
+                <li><strong>The Digital Era (1975–Present):</strong> Steven Sasson invented the first digital camera at Kodak. Today, physical film has largely been replaced by digital sensors (CCD and CMOS), turning light into bits and bytes that power smartphone cameras and the internet. </li>
+            </ul>
+        </header>
+        <main style="background: var(--card-bg); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05);">
+            <h3>Pixels & Tensors</h3>
+            <p style="color: var(--text-secondary); line-height: 1.8;">Digital images are matrices of numeric value channels (Red, Green, Blue). While humans perceive subjects and emotional weight, AI algorithms parse these arrays to determine structural trends and statistical noise deviations hidden in plain sight. </p>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis Steps</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="nav-logo"><span>AI</span>.Detector</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('about') }}" class="nav-item">History of Image</a></li>
+                <li><a href="{{ url_for('steps') }}" class="nav-item">Steps of Image Processing</a></li>
+                <li><a href="{{ url_for('detection') }}" class="nav-item">How to Detect Image</a></li>
+                <li><a href="{{ url_for('details') }}" class="nav-item">Image Diagnostic</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Analysis Pipeline</h1>
+            <p class="subtitle">The execution lifecycle of an uploaded image sample</p>
+        </header>
+        <main style="background: var(--card-bg); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+                <strong>1. Normalization:</strong> 
+                <p>Image dimensions are resized to uniform specifications, and color pixel values are rescaled (typically to a 0–1 range) to ensure compatibility with deep learning input tensors.</p>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+                <strong>2. Feature Extraction:</strong> 
+                <p>Deep convolutional layers traverse the image to identify and map low-level textures, edge orientations, and contrast variations, effectively creating a hierarchical representation of the visual data.</p>
+            </div>
+
+            <div>
+                <strong>3. Classification:</strong> 
+                <p>The system maps the extracted feature vectors into a learned probability space. It then evaluates these against trained models to determine the likelihood of human-created patterns versus synthetic artifacts produced by diffusion generation models.</p>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

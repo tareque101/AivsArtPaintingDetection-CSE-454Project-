@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis Metrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="nav-logo"><span>AI</span>.Detector</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('about') }}" class="nav-item">History of Image</a></li>
+                <li><a href="{{ url_for('steps') }}" class="nav-item">Steps of Image Processing</a></li>
+                <li><a href="{{ url_for('detection') }}" class="nav-item">How to Detect Image</a></li>
+                <li><a href="{{ url_for('details') }}" class="nav-item">Image Diagnostic</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <main style="background: var(--card-bg); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05);">
+            <h3>Comprehensive Diagnostic Checks</h3>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                Image processing involves a systematic pipeline to transform raw data into actionable insights. The core workflow includes:
+            </p>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>1. Image Acquisition:</strong> The initial stage where light intensity is captured by sensors (CCD/CMOS), converted into electrical signals, and digitized into a matrix of intensity values known as pixels.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>2. Image Enhancement:</strong> Pre-processing techniques used to improve visibility. This involves histogram equalization to boost contrast, noise reduction filters (e.g., Gaussian or Median filters), and sharpening algorithms to define edges.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>3. Image Restoration:</strong> A process that mathematically models and reverses degradations. It focuses on deblurring, removing geometric distortions, and correcting sensor-specific artifacts like vignetting.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>4. Color Image Processing:</strong> Managing color spaces by converting between RGB, HSV, or Lab models. This stage ensures color consistency and allows for targeted color-based thresholding.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>5. Wavelets and Multiresolution Processing:</strong> Utilizing mathematical transforms to represent images at varying levels of detail. This is essential for effective noise suppression and multi-scale feature analysis.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>6. Compression:</strong> Implementing lossy or lossless algorithms (e.g., JPEG, PNG, or WebP) to reduce data redundancy, allowing for efficient storage and faster network transmission.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>7. Morphological Processing:</strong> Applying non-linear operations related to the shape or morphology of features. Key operations include dilation, erosion, opening, and closing to smooth boundaries or isolate specific structural components.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>8. Segmentation:</strong> The critical act of partitioning an image into meaningful segments. Techniques include thresholding, watershed algorithms, or edge-based detection to isolate foreground objects from the background.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>9. Representation and Description:</strong> Converting pixel data into compact forms. Boundaries are represented as chains or polygons, while regions are described by features like area, perimeter, and texture descriptors.
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <strong>10. Object Recognition:</strong> The final intelligence layer where descriptors are fed into classifiers (such as Neural Networks or SVMs) to identify and label objects, such as detecting a face, text, or specific environmental features.
+            </div>
+        </main>
+    </div>
+</body>
+</html>

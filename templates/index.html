@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI vs Human Art Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="nav-logo"><span>AI</span>.Detector</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('about') }}" class="nav-item">History of Image</a></li>
+                <li><a href="{{ url_for('steps') }}" class="nav-item">Steps of Image Processing</a></li>
+                <li><a href="{{ url_for('detection') }}" class="nav-item">How to Detect Image</a></li>
+                <li><a href="{{ url_for('details') }}" class="nav-item">Image Diagnostic</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1> AI Art Detector</h1>
+            <p class="subtitle">Upload an image to detect if it's AI-generated or human-created art</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <span class="upload-icon">📁</span>
+                        <p class="upload-text">Drag & Drop your image here</p>
+                        <p class="upload-or">or</p>
+                        <button class="btn btn-upload" id="uploadBtn">
+                            Browse Files
+                        </button>
+                        <p class="upload-hint">Supports: JPG, PNG, GIF, BMP, WebP (Max: 16MB)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="image-preview">
+                    <img id="previewImage" src="" alt="Preview">
+                </div>
+                <button class="btn btn-detect" id="detectBtn">
+                    🔍 Detect Art Origin
+                </button>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-card" id="resultCard">
+                    <div class="result-image">
+                        <img id="resultImage" src="" alt="Result">
+                    </div>
+                    <div class="result-details">
+                        <h2 id="resultText"></h2>
+                        <div class="confidence-bar">
+                            <div class="confidence-label">Confidence:</div>
+                            <div class="confidence-value" id="confidenceValue"></div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <button class="btn btn-reset" id="resetBtn">
+                             Try Another Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing artwork...</p>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message">
+                    <span class="error-icon"></span>
+                    <p id="errorText"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

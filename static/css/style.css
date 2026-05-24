@@ -1,0 +1,209 @@
+/* Extraordinary Modern Reset & Variables */
+:root {
+    --bg-dark: #0a0b10;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-glow: rgba(0, 242, 254, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    --accent-glow: 0 0 20px rgba(0, 242, 254, 0.4);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: rgba(10, 11, 16, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.nav-logo span {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-item:hover {
+    color: #00f2fe;
+    text-shadow: var(--accent-glow);
+}
+
+/* Container & Header Setup */
+.container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* UI Sections & Containers */
+.upload-area {
+    background: var(--card-bg);
+    border: 2px dashed rgba(0, 242, 254, 0.3);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: #00f2fe;
+    box-shadow: var(--accent-glow), inset 0 0 20px rgba(0, 242, 254, 0.05);
+    transform: translateY(-2px);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+/* Glassmorphism Buttons */
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-upload {
+    background: var(--accent-gradient);
+    color: #000;
+    box-shadow: var(--accent-glow);
+}
+
+.btn-upload:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.btn-detect {
+    background: #ffffff;
+    color: #000;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.btn-reset {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1.5rem;
+}
+
+.btn-reset:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Image Previews */
+.image-preview img, .result-image img {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Dynamic Results Layout */
+.result-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    height: 8px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress-fill {
+    background: var(--accent-gradient);
+    height: 100%;
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
+
+/* Spinner Loader */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-left-color: #00f2fe;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
